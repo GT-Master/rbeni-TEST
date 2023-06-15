@@ -117,6 +117,10 @@ plot_map <- function( arr, lon = NULL, lat = NULL,
             col=out.mycolorbar$colors, breaks=out.mycolorbar$margins,
             xlab="", ylab=""
             )
+
+    TestRequiredPkg("maps")
+    require("maps")
+    message("This function required to attach maps namespace.")          
     if (coastlines) map( add=TRUE, interior=FALSE, resolution=0, lwd=0.5 )
 
     axis( 2, at=lat.labels, lab=do.call(expression,a), cex.axis=0.7, lwd=1.5 )
